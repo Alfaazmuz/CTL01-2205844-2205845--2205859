@@ -1,0 +1,72 @@
+package SmartCal;
+
+public class SmartCalculator {
+
+    private double principal;
+    private double rate;
+    private int time;
+
+    public SmartCalculator() {
+        this.principal = 0.0;
+        this.rate = 0.0;
+        this.time = 0;
+    }
+
+    public SmartCalculator(double principal, double rate, int time) {
+        this.principal = principal;
+        this.rate = rate;
+        this.time = time;
+    }
+
+    public double getPrincipal() {
+        return principal;
+    }
+
+    public void setPrincipal(double principal) {
+        this.principal = principal;
+    }
+
+    public double getRate() {
+        return rate;
+    }
+
+    public void setRate(double rate) {
+        this.rate = rate;
+    }
+
+    public int getTime() {
+        return time;
+    }
+
+    public void setTime(int time) {
+        this.time = time;
+    }
+
+    public double calculateSimpleInterest() {
+        return (principal * rate * time) / 100;
+    }
+
+    public double calculateCompoundInterest(int numberOfTimes) {
+        return principal * Math.pow((1 + rate / 100.0), numberOfTimes * time);
+    }
+
+    public double calculateMean(double[] numbers) {
+        double sum = 0.0;
+        for (double number : numbers) {
+            sum += number;
+        }
+        return sum / numbers.length;
+    }
+
+    public long calculateFactorial(int number) {
+        if (number == 0 || number == 1) {
+            return 1;
+        }
+        return number * calculateFactorial(number - 1);
+    }
+
+    public double calculatePercentage(double totalMarks, double obtainedMarks) {
+        return (obtainedMarks / totalMarks) * 100;
+    }
+}
+
